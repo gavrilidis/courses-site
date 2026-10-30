@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Энергия рождения и путь Ганапати</title>
+<meta name="description" content="Разбор энергии по дате рождения с балийским практиком: стихии, Рудра, Дурга, сила мысли и медитация в движении">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap">
+<style>
+:root {
+  /* layout: hero on a 3D canvas, then a single reading column with full-width program sections */
+  --bg: #0a1f18; --bg2: #113026; --fg: #f4efe3; --muted: #a9bfae;
+  --accent: #f2a516; --accent2: #3aa7c9; --line: rgba(242,165,22,.25);
+  --display: "Philosopher", Georgia, serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  --col: 68rem; --read: 42rem;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+.wrap { width: 100%; max-width: var(--col); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--body); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.topbar a { text-decoration: none; font-size: .9rem; color: var(--muted); }
+.topbar a:hover, .topbar a:focus-visible { color: var(--fg); }
+.topbar nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.topbar .brand { font-weight: 600; color: var(--fg); }
+@media (max-width: 720px) { .topbar nav { display: none; } }
+.hero { position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; display: block; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in srgb, var(--bg) 88%, transparent) 0%, color-mix(in srgb, var(--bg) 55%, transparent) 55%, transparent 100%); }
+.hero .wrap { padding-block: clamp(3.5rem, 9vw, 7rem); display: grid; gap: 1.4rem; max-width: var(--col); }
+.hero h1 { font-size: clamp(2.4rem, 6.2vw, 5rem); max-width: 14ch; }
+.hero .sub { font-size: clamp(1.1rem, 2vw, 1.4rem); max-width: 34ch; color: var(--fg); line-height: 1.35; }
+.hero .tag { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--accent2); }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: .3rem .8rem; font-size: .82rem; color: var(--muted); background: color-mix(in srgb, var(--bg) 60%, transparent); }
+.chip b { color: var(--fg); font-weight: 600; }
+section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+section + section { border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: .5rem; margin-bottom: 2rem; }
+.sec-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.about .lead { font-size: 1.2rem; line-height: 1.5; max-width: var(--read); }
+.outcomes { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.outcomes li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .6rem; align-items: start; padding: .9rem 1rem; background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; }
+.outcomes li::before { content: "✦"; color: var(--accent); font-size: .9rem; line-height: 1.7; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 1rem; margin-top: 1.6rem; }
+.fact { border-top: 2px solid var(--accent); padding-top: .6rem; }
+.fact b { display: block; font-family: var(--display); font-size: 1.7rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.fact span { font-size: .82rem; color: var(--muted); }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; gap: 2rem; } }
+.modules { display: grid; gap: 1.6rem; }
+.module { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+.module:first-child { border-top: 0; padding-top: 0; }
+.module .num { font-family: var(--display); font-size: 2.6rem; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.module .meta { display: grid; gap: .3rem; color: var(--muted); font-size: .8rem; margin-top: .5rem; }
+.module .meta .ts { font-family: var(--mono); font-size: .78rem; }
+.module h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin-bottom: .7rem; }
+.module .summary { max-width: var(--read); font-size: 1.05rem; margin-bottom: 1.3rem; }
+.ideas { margin: 0; padding: 0; list-style: none; display: grid; gap: .55rem; max-width: var(--read); }
+.ideas li { padding-left: 1.3rem; position: relative; }
+.ideas li::before { content: ""; position: absolute; left: 0; top: .72em; width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent2); }
+.label { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 1.4rem 0 .7rem; }
+.practices { display: grid; gap: 1rem; }
+.practice { background: var(--bg2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 12px; padding: 1.2rem 1.3rem; }
+.practice h4 { font-family: var(--body); font-weight: 600; font-size: 1.05rem; margin-bottom: .3rem; }
+.practice .goal { color: var(--muted); font-size: .95rem; margin-bottom: .8rem; }
+.practice ol { margin: 0; padding-left: 1.3rem; display: grid; gap: .4rem; font-size: .97rem; }
+.practice .dur { display: inline-block; margin-top: .8rem; font-size: .78rem; color: var(--muted); font-family: var(--mono); }
+blockquote { margin: 1.4rem 0 0; padding: 0 0 0 1.2rem; border-left: 2px solid var(--accent2); font-family: var(--display); font-size: 1.25rem; line-height: 1.35; font-style: italic; max-width: var(--read); }
+blockquote + blockquote { margin-top: .9rem; }
+@media (max-width: 720px) { .module { grid-template-columns: 1fr; gap: .6rem; } .module .num { font-size: 2rem; } }
+.glossary { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 1rem; }
+.term { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg2); }
+.term b { display: block; font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin-bottom: .3rem; }
+.term p { font-size: .94rem; color: var(--muted); }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--bg2); margin-bottom: .8rem; }
+summary { cursor: pointer; padding: 1rem 1.2rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--mono); color: var(--accent); font-size: 1.2rem; }
+details[open] summary::after { content: "–"; }
+details .body { padding: 0 1.2rem 1.2rem; display: grid; gap: .9rem; max-width: 100%; }
+details .body p { max-width: var(--read); font-size: .96rem; }
+details .body p .ts { font-family: var(--mono); font-size: .72rem; color: var(--muted); margin-right: .5rem; }
+.note { font-size: .9rem; color: var(--muted); max-width: var(--read); }
+footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; color: var(--muted); font-size: .88rem; }
+footer .wrap { display: grid; gap: .6rem; }
+.btn { display: inline-block; text-decoration: none; padding: .7rem 1.2rem; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; font-size: .95rem; }
+.btn:hover, .btn:focus-visible { filter: brightness(1.08); }
+:focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">← Все курсы</a>
+  <nav><a href="#about">О курсе</a><a href="#program">Программа</a><a href="#glossary">Глоссарий</a><a href="#transcript">Расшифровка</a></nav>
+  <span class="eyebrow">Курс 8 из 9</span>
+</div></div>
+<header class="hero">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">консультация · Балийский практик · 50 мин</div>
+    <h1>Энергия рождения и путь Ганапати</h1>
+    <p class="sub">Разбор энергии по дате рождения с балийским практиком: стихии, Рудра, Дурга, сила мысли и медитация в движении</p>
+    <p class="tag">Три дня в одном рождении</p>
+    <div class="chips">
+  <span class="chip"><b>8</b> модулей</span>
+  <span class="chip"><b>5</b> практик</span>
+  <span class="chip"><b>50 мин</b> аудио</span>
+  <span class="chip">консультация</span>
+</div>
+  </div>
+</header>
+<main>
+<section id="about"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">О курсе</div><h2>Что это и для кого</h2></div>
+  <div class="about">
+    <div>
+      <p class="lead">Запись индивидуальной сессии на Бали: балийский практик читает энергию Луизы по дню рождения и соседним дням, раскладывая её по стихиям air, fire, water и solid. В разборе появляются Рудра и «дверь смерти», Шива Гуру и «crazy mind», Дурга и Кали, Шри Дурга и тантра, а также практические советы: как обращаться с силой мысли, медитировать в движении и перезаряжаться у воды и гор. Сессия завершается приглашением изучить авторскую медитацию Ганапати.</p>
+      <p class="note" style="margin-top:1rem">Для тех, кто хочет увидеть, как балийская традиция читает энергию человека по дате рождения, и получить ориентиры для работы с сильным умом, творческой силой и энергией Рудры и Дурги.</p>
+      <div class="facts">
+  <div class="fact"><b>8</b><span>модулей</span></div>
+  <div class="fact"><b>5</b><span>практик</span></div>
+  <div class="fact"><b>1</b><span>запись</span></div>
+  <div class="fact"><b>15</b><span>терминов</span></div>
+</div>
+    </div>
+    <div><div class="label" style="margin-top:0">Что вы получите</div><ul class="outcomes"><li><span>Понимание балийской схемы стихий (air, fire, water, solid) и их качеств: ум, любовь, спокойствие, мудрость, с Шивой в центре.</span></li><li><span>Представление об энергии Рудры как «двери смерти» и о том, как ведущий связывает её с судом, гневом из любви и помощью людям в трансформации.</span></li><li><span>Принцип творца: создавать, не оценивая результат как хороший или плохой, и отпускать ответственность после того, как созданное отдано.</span></li><li><span>Навык обращения с силой мысли: понимать, что идея уже является актом творения, и не откладывать задуманное.</span></li><li><span>Способ медитации в движении (бег, плавание, хайкинг, йога) для людей с огненной энергией и «crazy mind».</span></li><li><span>Ориентиры для отношений и поиска учителя тантры, а также знакомство с идеей медитации Ганапати шести уровней.</span></li></ul></div>
+  </div>
+</div></section>
+<section id="program"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Программа</div><h2>8 модулей в порядке занятия</h2><p class="note">Нумерация следует порядку записи. Метка времени указывает, где модуль начинается в аудио.</p></div>
+  <div class="modules"><article class="module" id="m1">
+  <div><div class="num">01</div><div class="meta"><span>Recording</span><span class="ts">с 00:00</span></div></div>
+  <div>
+    <h3>Три дня в одной энергии</h3>
+    <p class="summary">Практик объясняет, что Луиза родилась раньше срока, и из-за этого в её энергии соединились три дня: день до рождения, день рождения и день после. Он называет это первым подобным случаем в своей практике и раскладывает схему стихий: air, fire, solid, water и центр, где находится свет, душа, бог — Шива в теле. Энергия Луизы тянет её к одиночеству, горам, воде и природе.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>По словам ведущего, рождение раньше срока означает, что человек «взял» энергию трёх дней сразу, и это делает энергию огромной и переменчивой: в один день много огня, в другой вода, в третий solid.</li><li>Стихии в балийской схеме имеют качества: air — ум, fire — любовь, эго, сексуальность, исключительность; water — спокойствие, красота, процветание; solid — мудрость, любовь, жертва.</li><li>В центре схемы находится свет, душа или бог, которого в теле называют Шивой.</li><li>Человек с такой энергией любит быть один, тянется к горам, воде и природе и, оказавшись там, не хочет уходить.</li></ul>
+    
+    <blockquote>You take three days energy become one. This is the huge one.</blockquote><blockquote>In the middle it is light, or soul, or god that we call Shiva in body.</blockquote>
+  </div>
+</article><article class="module" id="m2">
+  <div><div class="num">02</div><div class="meta"><span>Recording</span><span class="ts">с 03:19</span></div></div>
+  <div>
+    <h3>Рудра и дверь смерти</h3>
+    <p class="summary">Практик находит в энергии Луизы Рудру — «дверь смерти», которая одновременно является дверью жизни. Луиза признаётся, что боится собственного гнева, когда её обманывают. Ведущий объясняет: Рудра — это Шива, ставший разрушителем из любви, и когда Рудра разрушает, его не остановит даже бог. Это первый дар: умение открывать дверь смерти и проводить людей и духов к свету.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Энергия Рудры — это энергия суждения: человек не выносит обмана и его гнев способен разрушить жизнь обманщика.</li><li>Рудра происходит от Шивы: Шива превращается в Рудру из-за любви, поэтому гнев Рудры — это гнев из любви.</li><li>Владелец «двери смерти» может входить в разные пространства и помогать людям и духам, нуждающимся в помощи, выйти к свету.</li><li>Ведущий называет это красивым и важным человеческим долгом и первым даром Луизы.</li></ul>
+    
+    <blockquote>The Rudra energy is about judging. You didn&#x27;t like people cheating you.</blockquote><blockquote>When Rudra really do destroy, nobody can stop, even god himself.</blockquote>
+  </div>
+</article><article class="module" id="m3">
+  <div><div class="num">03</div><div class="meta"><span>Recording</span><span class="ts">с 06:05</span></div></div>
+  <div>
+    <h3>Творец, бесконечность и вода</h3>
+    <p class="summary">Второй дар — быть светом и бесконечностью, третий — быть творцом. Практик объясняет, что творение не бывает хорошим или плохим: как бог создаёт всё, так и Луиза создаёт и отдаёт, и после этого ответственность переходит к получателю. Бесконечность опасна, если уйти в тёмную сторону: тогда никто, кроме самого человека, помочь не сможет. Про воду: иногда нужно просто оставаться внутри, не выходить; море на Бали считается огнём, а для баланса нужны река, озеро и горы.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Творец не выбирает, что создавать, и не оценивает результат: созданное отдаётся, и дальше это карма того, кто получил.</li><li>Нельзя перестать создавать: остановка делает творца растерянным, печальным и бесполезным.</li><li>Бесконечность хороша, когда создаёшь, но если позволить себе уйти в гнев или в глубину «утопания», выбраться сможешь только сам, потому что ты сам создаёшь свою жизнь.</li><li>Вода как творец течёт, но когда вода не хочет идти, нужно просто остаться в своей комнате и быть внутри — это путь бога и воды.</li><li>В балийском понимании море — это огонь, а река и озеро — вода; при избытке огня нужно идти к озеру, реке и в горы и делать хайкинг, чтобы душу и тело перезарядила вселенная.</li></ul>
+    <div class="label">Практика</div><div class="practices"><div class="practice"><h4>Оставаться внутри, как вода</h4><p class="goal">Следовать энергии воды, когда она не хочет двигаться</p><ol><li>Заметить момент, когда «вода не хочет идти».</li><li>Остаться в своей комнате и никуда не выходить.</li><li>Просто быть внутри — ведущий называет это путём бога и воды.</li></ol></div><div class="practice"><h4>Перезарядка у воды и в горах</h4><p class="goal">Уравновесить избыток огня энергией озера, реки и горы</p><ol><li>При большом количестве огня отправиться к озеру, реке или в горы.</li><li>Заниматься хайкингом, чтобы душа и тело почувствовали энергию вселенной.</li><li>Позволить вселенной перезарядить себя.</li></ol></div></div>
+    <blockquote>Your karma is done, my karma is created.</blockquote><blockquote>You are god, you are the creator, you create your own life.</blockquote>
+  </div>
+</article><article class="module" id="m4">
+  <div><div class="num">04</div><div class="meta"><span>Recording</span><span class="ts">с 11:50</span></div></div>
+  <div>
+    <h3>Шива Гуру и crazy mind</h3>
+    <p class="summary">Практик показывает энергию дня до рождения, дня рождения и дня после и говорит, что видит такое впервые. Это «crazy mind»: ум, который не может замолчать, бесконечно любопытен и стремится в глубину. На Бали это называют Шива Гуру — учитель бога. Таких людей ведущий называет «alien»: они принадлежат будущему, их идеи понимают через годы. Луиза связывает это со своим психологическим образованием, и практик соглашается: психология — её идентичность, дверь смерти — способ помогать, творчество — способ создавать жизнь.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>«Crazy mind» — ум, который не перестаёт думать, всегда любопытен и хочет идти глубже; это та же бесконечность, что и в творчестве.</li><li>Шива Гуру — «учитель бога»: ведущий предлагает представить, какой ум и какая энергия нужны, чтобы учить бога, оставаясь в человеческом теле.</li><li>Людей с такой энергией ведущий называет «alien»: они принадлежат будущему, а то, о чём они думали пять лет назад, становится настоящим только сейчас.</li><li>Для Луизы практик складывает три линии: психология как идентичность, дверь смерти как способ помогать людям, творчество как создание своей жизни.</li><li>Луиза видит в этом метод: подводить людей к «двери смерти» их стереотипов и старых программ, чтобы они трансформировались и начали создавать жизнь иначе.</li></ul>
+    
+    <blockquote>You cannot stop to shut up, thinking, thinking, thinking. You always curious about everything.</blockquote><blockquote>Shiva Guru — the teacher of god. What kind of brain do you have?</blockquote>
+  </div>
+</article><article class="module" id="m5">
+  <div><div class="num">05</div><div class="meta"><span>Recording</span><span class="ts">с 15:48</span></div></div>
+  <div>
+    <h3>Дурга, Кали и утроба нового рождения</h3>
+    <p class="summary">Луиза рассказывает, как читает незнакомых людей по руке. Практик объясняет это не только энергией Шивы, но и энергией Дурги и Кали: в неделю её рождения она стала «владелицей трёх Кали». Кали — мать; в глубокой медитации практик получил ответ о людях, которые приходят к нему с мыслями о смерти: все они находятся в утробе Дурги, чтобы родиться заново в том же теле. Он собрал более 125 таких «crazy people», которые заботятся друг о друге. Затем он переходит к Шри Дурге — энергии, которая всегда подталкивает, — и объявляет Луизу владелицей тантры.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Умение читать людей по руке ведущий объясняет энергией Дурги и Кали, а не только Шивы.</li><li>Кали — это мать; к практику приходят успешные, красивые молодые женщины с мыслями о самоубийстве, и ответ, полученный в медитации, — все они в утробе Дурги.</li><li>В утробе Дурги нет активности: нужно только думать, учиться и чувствовать, идти внутрь, а не наружу, пока не родишься заново — в том же теле, но с изменённым собой.</li><li>Практик собрал более 125 людей с такой энергией; они образуют круг, в котором заботятся друг о друге.</li><li>Шри Дурга — энергия, которая всегда усиливает человека в том, чего он хочет и что делает; из-за Рудры он может резко переходить с одной стороны на другую.</li><li>Тантра, по словам ведущего, — не секс и не злоупотребление людьми, а умение включить сексуальную энергию и направить её иначе, к свету; через кожу (solid с водой и воздухом) Луиза легко соединяется с людьми и чувствует, кто они.</li><li>Практик отмечает, что лицо Луизы меняется, и спрашивает, замечала ли она это утром в зеркале.</li></ul>
+    <div class="label">Практика</div><div class="practices"><div class="practice"><h4>Пребывание в утробе Дурги</h4><p class="goal">Пройти новое рождение в том же теле</p><ol><li>Признать, что сейчас ты находишься в утробе Дурги, как ребёнок в утробе матери.</li><li>Не предпринимать никакой внешней активности.</li><li>Только думать, учиться и чувствовать.</li><li>Идти вглубь себя, а не наружу, чтобы найти себя внутри.</li><li>Оставаться в этом состоянии до нового рождения — менять не тело, а себя.</li></ol></div></div>
+    <blockquote>All of you right now in the womb of Durga, because you will new reborn as a new person.</blockquote><blockquote>Just think and learn and feel. There is no activity until you are new reborn.</blockquote>
+  </div>
+</article><article class="module" id="m6">
+  <div><div class="num">06</div><div class="meta"><span>Recording</span><span class="ts">с 23:26</span></div></div>
+  <div>
+    <h3>Брак, портал и мастер ума</h3>
+    <p class="summary">Практик показывает на схеме: в одном положении энергии «один брак на всю жизнь», а в положении Луизы он гарантирует больше трёх браков. С умом и водой в этой позиции люди обычно успешны и владеют несколькими компаниями; он приводит пример женщины из Англии. Луиза — «alien», потому что нужна в будущем, её предназначение — исцеление. Она «мастер ума»: легко переходит между сознанием и подсознанием и может открывать другие порталы. С сочетанием Дурги и Шри Дурги её медитация уходит в глубину за минуту, но «crazy mind» заставляет сомневаться и откладывать.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Положение энергии на схеме, по ведущему, определяет, будет ли один брак на всю жизнь или несколько; для Луизы он ожидает больше трёх.</li><li>Сочетание ума, воды и любви в этой позиции чаще всего даёт успех и собственные компании.</li><li>Дверь смерти связана с умом: Луиза — мастер ума, который легко переходит из сознательного в подсознательное и может открывать другие порталы.</li><li>Её предназначение — исцеление; поэтому ведущий говорит, что она нужна в будущем.</li><li>Медитация у неё может уйти в глубину за минуту, но постоянные вопросы «делать или нет» задерживают идеи; нужно просто создавать, даже мелочи, потому что это её судьба.</li></ul>
+    
+    <blockquote>When your side is here, I guarantee that you married more than three times.</blockquote><blockquote>You are the master of mind. You can easy go to conscious, subconscious, just like that.</blockquote>
+  </div>
+</article><article class="module" id="m7">
+  <div><div class="num">07</div><div class="meta"><span>Recording</span><span class="ts">с 27:36</span></div></div>
+  <div>
+    <h3>Сила мысли и медитация в движении</h3>
+    <p class="summary">Практик предупреждает людей с силой ума: любая идея в голове — уже творение, вселенная слушает и обязательно отвечает. Когда желаний много, а решения откладываются, вселенная ждёт ответа, а затем всё приходит разом — так произошло с одной из его участниц. Луиза спрашивает, как фокусировать идеи, и получает ответ: с энергией воды легко медитировать сидя, но при огне нужно медитировать в движении — йога, хайкинг, плавание, даже зал. Примеры: 55-летняя женщина, проплывшая 10 и 15 километров и еженедельно поднимающаяся на гору, помолодела; Луиза в 37 выглядит на 28–29.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Идея в уме — это уже акт творения: вселенная слушает и обязательно ответит, поэтому нужно быть осторожным с тем, что держишь в голове.</li><li>Из одного желания вырастает цепочка других; если постоянно откладывать «может да, может нет», вселенная держит всё и потом отдаёт разом, когда ты уже не этого хочешь.</li><li>Ум всегда связан со вселенной и богом; это не плохо, но нужно формировать истинные, точные ожидания.</li><li>С энергией воды и любви легко медитировать, с энергией огня — нет; тогда медитация происходит через движение: йога, хайкинг, плавание, зал.</li><li>Суть медитации в движении — не думать о том, что делаешь, а чувствовать себя и дыхание и наслаждаться; тогда ум делает тело сильнее и усталость не приходит.</li><li>Практик связывает такую практику с омоложением: кожа меняется, человек становится моложе и счастливее.</li></ul>
+    <div class="label">Практика</div><div class="practices"><div class="practice"><h4>Медитация в движении</h4><p class="goal">Медитировать при огненной энергии и беспокойном уме, фокусируя идеи</p><ol><li>Выбрать движение: бег, хайкинг, плавание, йога или тренировка в зале.</li><li>Во время движения не думать о том, что делаешь.</li><li>Просто чувствовать себя и своё дыхание.</li><li>Наслаждаться процессом.</li><li>Замечать, как ум укрепляет тело и усталость не приходит.</li></ol></div></div>
+    <blockquote>Whatever you have in your mind, the idea, this means you already create, and then universe listening.</blockquote><blockquote>You need to do meditate while exercise, like yoga, hiking, swimming. That&#x27;s the way you do meditate.</blockquote>
+  </div>
+</article><article class="module" id="m8">
+  <div><div class="num">08</div><div class="meta"><span>Recording</span><span class="ts">с 34:30</span></div></div>
+  <div>
+    <h3>Искусство, отношения и медитация Ганапати</h3>
+    <p class="summary">Практик говорит, что Шри Дурга в этой точке — владелица искусства; Луиза вспоминает фэшн-бизнес и коллекцию искусства, которая сложилась сама. Возможностей много, но все энергии должны сходиться к центру: любить, беречь и доверять себе. Внутри Луизы — мужское и женское, и ведущий называет эту двойственность сводящей с ума. Разговор переходит к отношениям: партнёр ниже по уму, энергии, финансам и духу ей скучен; Луиза рассказывает о прошлых отношениях и потере ребёнка и о вынесенном уроке. Практик отвечает, что её счастье и «брак» не в материальной жизни, а на уровне света, соединения Шивы и Дурги, а здесь — игра. Он советует идти внутрь, в бесконечность, учиться тантре у настоящего мастера и предлагает свою медитацию Ганапати из шести уровней.</p>
+    <div class="label">Ключевые идеи</div>
+    <ul class="ideas"><li>Шри Дурга в этом положении — владелица искусства; мода и коллекционирование — её проявления, и из этого могут вырасти разные бизнесы, но главным остаётся трансформирующий ум.</li><li>Все энергии должны сходиться к центру: любить себя, заботиться о себе, доверять себе.</li><li>Мужское и женское внутри одного человека — ещё одна двойственность, которая, по словам ведущего, сильно сбивает людей с толку.</li><li>Ум Луизы опережает время: пример с идеей телефона без кнопок, появившегося через два года; такой интеллект ведущий называет чудом.</li><li>Человеку с такой энергией трудно найти партнёра: мужчина глупее или медленнее быстро наскучивает; Луиза сама формулирует урок — не быть с тем, кто не её уровня, потому что это обман самой себя.</li><li>По ведущему, способность Луизы быть счастливой в отношениях лежит не в материальной жизни: «брак» происходит на уровне света, где соединяются мужское и женское, а здесь — игра жизни, в которую она умеет играть.</li><li>Тантру нужно учить у настоящего мастера, а не у тех, кто хочет секса; ведущий предлагает свою медитацию Ганапати, которая включает тантру, энергию и кундалини и состоит из шести уровней.</li></ul>
+    <div class="label">Практика</div><div class="practices"><div class="practice"><h4>Медитация Ганапати (анонс)</h4><p class="goal">Авторская медитация практика, включающая тантру, энергию и кундалини; «найдена через Ганешу»</p><ol><li>В записи шаги не даны: практик только сообщает, что медитация состоит из шести уровней, и просит подготовить воду («prepare the water»).</li></ol></div></div>
+    <blockquote>Sri Durga in this point is the owner of art.</blockquote><blockquote>Love yourself, take care of yourself, trust yourself.</blockquote>
+  </div>
+</article></div>
+</div></section>
+<section id="glossary"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Глоссарий</div><h2>Язык ведущего</h2></div>
+  <div class="glossary"><div class="term"><b>Air</b><p>Стихия воздуха в балийской схеме энергии; означает ум, сообразительность («the air means smart»).</p></div><div class="term"><b>Fire</b><p>Стихия огня; любовь, эго, сексуальность, исключительность, совершенство. При избытке огня медитировать нужно в движении и уравновешивать себя водой и горами.</p></div><div class="term"><b>Water</b><p>Стихия воды; спокойствие, красота, процветание. С энергией воды легко медитировать и уходить в глубокую любовь.</p></div><div class="term"><b>Solid</b><p>Твёрдая стихия; мудрость, любовь, жертва. Solid — это кожа, через которую (вместе с водой и воздухом) Луиза соединяется с людьми.</p></div><div class="term"><b>Шива в теле</b><p>Центр схемы: свет, душа, бог в теле человека.</p></div><div class="term"><b>Рудра</b><p>Шива, ставший разрушителем из любви; энергия суждения и гнева из-за обмана в любви; когда Рудра разрушает, его не остановит даже бог.</p></div><div class="term"><b>Дверь смерти (door of the dead)</b><p>Способность, связанная с Рудрой: входить в разные пространства и проводить людей и духов к свету; одновременно это дверь жизни.</p></div><div class="term"><b>Творец и бесконечность</b><p>Второй и третий дары: быть светом и бесконечностью и создавать, не оценивая результат; созданное отдаётся, и ответственность переходит получателю.</p></div><div class="term"><b>Шива Гуру</b><p>«Учитель бога» — энергия бесконечно любопытного, глубокого ума, который не может остановиться.</p></div><div class="term"><b>Crazy mind</b><p>Термин ведущего для ума, который постоянно думает, стремится вглубь и принадлежит будущему; таких людей он также называет «alien».</p></div><div class="term"><b>Дурга / Кали</b><p>Мать; энергия, в утробе которой человек проходит новое рождение в том же теле, без внешней активности — только думая, учась и чувствуя.</p></div><div class="term"><b>Три Кали</b><p>Энергия недели рождения Луизы: по словам ведущего, она владелица трёх Кали, с которыми нужно быть осторожной.</p></div><div class="term"><b>Шри Дурга</b><p>Энергия, которая всегда усиливает то, чего человек хочет и что делает; в положении Луизы — владелица искусства.</p></div><div class="term"><b>Тантра</b><p>По ведущему — не секс, а умение включить сексуальную энергию и направить её иначе, к свету; тантре нужно учиться у настоящего мастера.</p></div><div class="term"><b>Медитация Ганапати</b><p>Авторская медитация практика из шести уровней, включающая тантру, энергию и кундалини; названа в честь Ганеши (Ганапати).</p></div></div>
+</div></section>
+<section id="transcript"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Источник</div><h2>Полная расшифровка</h2><p class="note">Автоматическая расшифровка аудио без разметки говорящих. Имена и термины могут быть искажены.</p></div>
+  <details><summary><span>Recording</span></summary><div class="body"><p><span class="ts">00:00</span>this is the first time that i found someone like you that&#x27;s this really huge energy and you are born faster than you should be okay there is delay one day you are born and the day you are born you take another energy the day after i suppose to burn day after and i burn in another day oh wow this is the first time that i found most of them they delay to die to to burn but you are born in the middle of you take three days energy become one this is the huge one and i would like to understand more about you this is something really really crazy because of there is some energy in you it changes a lot for example like this right now you have fire a lot and then the day after you just have water and the day after you have solid energy the day after and you</p><p><span class="ts">01:26</span>change a lot it&#x27;s not easy to manage this no it is okay let&#x27;s start from here this is mean air this is fire solid this is water the air means smart this is love this is my ego sexual exclusive perfect this is wise this is wise love sacrifice this is mean calm beauty prosperity in the middle it is light or a turn or soul or god that we call shiva in body the god himself</p><p><span class="ts">02:26</span>and your energy that is amazing energy most of the time you want to be alone you like the mountain you like the water you like the nature you love it very much if you go there if you go there if you go back to a space of energy that you want you didn&#x27;t want to run away from that you want to stay like</p><p><span class="ts">03:19</span>this is beautiful you have the beautiful charm is really beautiful and then here there is rudra energy the rudra it means the door of the death that yeah how do you feel about that</p><p><span class="ts">03:47</span>where is the door of the dead there is a door of the life yes that is not ending there is not ending yeah that is the rudra the rudra energy is about judging you didn&#x27;t like people cheating you you&#x27;re really gonna kill them you really get mad by them so and sometimes i&#x27;m scared of myself because when i find someone cheating me sometimes i feel that even it&#x27;s not me because like i can get so much angry to that person then the person his life gonna be destroyed that&#x27;s destroyed i&#x27;m sometimes scared of that because when someone make me pain</p><p><span class="ts">04:41</span>i don&#x27;t know i can just for a moment you know when it&#x27;s like between when you&#x27;re realized and not realized when you&#x27;re inside of conscious and subconscious and i&#x27;m like can in the way when someone make me pain i can get like angry angry and and and i don&#x27;t know what&#x27;s going to happen with this person and i&#x27;m telling everyone even my ex-boyfriend i told him i&#x27;m a fire if you can handle with the fire go with it if you cannot stay yes that&#x27;s true the rudra energy is come from shiva the god himself so the shiva change himself become rudra because of love</p><p><span class="ts">05:26</span>so when someone cheating about love rudra will become rudra and destroy and when you dress in when rudra really do destroy nobody can stop even god himself even god this is the energy of judgment angry because of love and then that&#x27;s why you are the owner of the door of the dead you can entering many space</p><p><span class="ts">06:05</span>to entering the door of the dead you can bring people to the door of the dead to open to let them come to the light that is a beautiful amazing duty from human because of the rudra the only you can open the door for some people for some spirit need help there is connection between you and the spirit for example like someone close to you or someone you see uh on the road just die and then and then and there is a lot of ability here that is first gift okay that is first gift the second gifts that you have you are the light himself you are the infinity himself okay and once again you have this energy</p><p><span class="ts">07:18</span>here is you are the creator yeah you create everything don&#x27;t stop to create and make you feel confused sadness and useless what you create is not about that is good or bad okay for example like this god create everything yeah a good man bad man okay good people lovely people yeah god make an earthquake everything so that is not about your choice to create the simple thing like this you create a money or pawn and then you give it to me because you are god you create it and you give it to me when you give it to me so that is not your responsibility anymore how you can you will not do it yes i do it wrong way or good way this is my response yeah your karma is done my karma is created and to give it to the people yes how they will use it in those government yeah okay</p><p><span class="ts">08:38</span>that is that is you and the infinity if you let yourself to come to what is it the the anger you cannot stop it if you let yourself come to do the deepest of drowning you cannot help yourself because she you flow because she you flow because you are infinite but you can help yourself nobody can help you because you are god you are the creator you create your own life okay and you need to find how to stop the infinity the infinity is good when you create it but infinity become not good if you come to the dark side so you need to remember that is infinity of yours you need to control it and be careful about what you create because most of that you create</p><p><span class="ts">09:48</span>that you&#x27;re gonna feel not good because once again oh she gonna hurt because of what i do so once again it is not your karma anymore that is not your responsibility after you create create even a small thing because you are a creator the water</p><p><span class="ts">10:10</span>when the water become a creator this means the water floating but sometimes when the water didn&#x27;t want to go you just need to stay just stay stay in your room just stay you didn&#x27;t want to go anywhere just</p><p><span class="ts">10:34</span>be inside that is the way of god and water and then my my apartment where i&#x27;m living it&#x27;s a close to the sea and i have to be close to the sea because for me it&#x27;s important to be close to see the water that&#x27;s good it&#x27;s not close to the sea it&#x27;s good to close to the river or to the lake because of what in dubai no river it&#x27;s like it&#x27;s just only sea yes because in balinese way the sea is fire the water fire yes the water of fire the river is the river the energy of what is it</p><p><span class="ts">11:28</span>water when the water in the lake okay the energy of water to observe the energy so when you have a lot of fire you need to come to kind like a lake river mountain balance</p><p><span class="ts">11:50</span>you need to do hiking to let it your soul okay and your body to feel the energy of universe and kind like you will recharge by universe that you need to do and then the amazing one this is the day before you&#x27;re born this is the day when you are born this is the day after you are born that is the first time that i see in my life then what does it mean</p><p><span class="ts">12:37</span>crazy mind yes you cannot stop to shut up to thinking thinking thinking you always curious about everything you want to go deep deep deep deep deep and then you are the smartest what is it about</p><p><span class="ts">13:01</span>this is involved in bali that we call shiva guru shiva yeah shiwa guru the mean the teacher of god so let let imagine like there is god and you are the teacher of god what kind of brain do you have what kind of energy do you have stay in the human mind you are the god the the teacher of god it&#x27;s so crazy it&#x27;s not easy to handle no it&#x27;s not easy this is the same number infinity that&#x27;s why i call people here is crazy mind and then i call them alien</p><p><span class="ts">13:54</span>alien yeah because you are not belong here you are belong future because what you create is about future not now what you think about five years ago it&#x27;s become now so always like that when you&#x27;re thinking about the idea it always about future and nobody understands about it even you didn&#x27;t understand about what you do this is good to be teacher psychology i have psychological education it&#x27;s my third education i have three high education yes the psychology law is your identity the door of the devil is the way to help people and this one to create your own life confuse</p><p><span class="ts">15:03</span>what i see after your words that if i see how it&#x27;s connected it&#x27;s like psychological practice or the product which i can create for psychological mind is to push them to come to the door of the death like those stereotypes</p><p><span class="ts">15:26</span>past programs whatever they were thinking it was be died and here they&#x27;re going to transform start to create those life that absolutely another way this is the first time that i see i see this is the first time that i met someone like you how good is it thank you</p><p><span class="ts">15:48</span>but you know what i want to tell you sometimes it&#x27;s starting dubai okay because before i was living in russia in moscow and in dubai sometimes i was sitting with the people like just in a dinner i don&#x27;t know these people i see the first time and instead of my heart was something i asked him give me your give me your hand and i i start to make like this and i start to tell them information about them they was in shock i don&#x27;t even i was in shock how i did it because i don&#x27;t know from where i did it and they they tell me that i i read the information which i cannot know i don&#x27;t know them even know those relatives know about them i believe it&#x27;s coming i believe them why</p><p><span class="ts">16:36</span>this is not just about shiwa energy okay and this is about durga energy the kali ah khali oh yeah i hear about kali and then there is another one during one week</p><p><span class="ts">16:59</span>it&#x27;s the period of your born you the owner of three kali okay another energy that is so huge so crazy this energy is belong here no so shri kali himself right now will bring you to new reborn who are the kali the kali is the mother when some people come to me they are so crazy they want to suicide they are succeed but they want to suicide most of them is young woman is beautiful succeed and then come to me should i die should i die how i&#x27;m dying where i should go why didn&#x27;t feel my life why didn&#x27;t feel love even i cannot do this food should i die and then i say no when i go in my deep meditate what i found because i&#x27;m questioning with god why they are like that where they need to go what the purpose of their life</p><p><span class="ts">18:36</span>and what i heard is all of you right now in the womb of durga because of you will new reborn as a new person when you are in the womb of the mother what you need to do is just think and learn and feel there is no activity no activity no activity until you are new reborn if you think about this wow this means they need to more deep about himself not outside yeah inside to find themselves inside yeah because you can newly born yes to stay in the same body you don&#x27;t need to change the body for a new born you need to change your and now i collect more than 125 people like you the crazy people</p><p><span class="ts">19:53</span>and then we have the what is it cycle to take care of each other and thanks god they are good all big chief this is the huge energy and then you have the tree to</p><p><span class="ts">20:15</span>the sri durga himself it&#x27;s about the energy that always boosting you whatever you want whatever you do because you have this side and suddenly you can have this side because of rudra</p><p><span class="ts">20:38</span>what what the meaning of it you are the owner of tantra yeah wow you are the owner of so the tantra himself most of people they didn&#x27;t understand the people using to what is it in a wrong way like abuse people like to do sex only not like that the tantra is not like</p><p><span class="ts">21:19</span>i teach people some people about tantra the tantra is about how to let your energy the sexual energy to turn on and then use it in different way and use it in the good way and use it to the light</p><p><span class="ts">21:41</span>that&#x27;s why when you touch like this that you feel people that you see and you understand who are they the solid is the skin the skin with the water the skin with the air you are easy to connect with them and you will know that for many times you change your face have you realize it have you wake up in the morning is it me have you question it sometimes because your face change but i was thinking to start to learn tantra but yes i was not doing it because i didn&#x27;t find the person who can teach me in the right way tantra because i understand the tantra and that is not about sex it&#x27;s like a spiritual connection yes and like uh even get orgasm without touching but some people doing in the wrong way that&#x27;s why look i love to be i love to learn something</p><p><span class="ts">22:57</span>but from masters not the people who have the right technology not the changing them because those mind is same thing that&#x27;s why you need to be careful with the three khali that you have</p><p><span class="ts">23:26</span>this is amazing energy if they are in this position one married one lifetime one marry one lifetime what does it mean you will marry just one time just one time but when your side is here i guarantee that you married more than three times now i&#x27;m here or here you are here i&#x27;m here</p><p><span class="ts">24:05</span>because you are smart and you have water and love in this position most of them succeed they have their own company and they have many companies there is one like you in england england woman</p><p><span class="ts">24:29</span>so rich so beautiful so happy and try to suicide like like i see and then right now become the last time she called me uncle there is one man before that he cannot feel man just no and then one time one time there is one man try to approach me and serve me so well yeah so back to you</p><p><span class="ts">25:03</span>you are alien because of we need you in the future time okay you&#x27;re gonna do healing that is your purpose like you say the door of the death is connected with the mind who are you</p><p><span class="ts">25:22</span>the master of the master of mind from your side you can easy to go to conscious and conscious subconscious just like that you are easy to go if we talk about this that mean you can open another portal</p><p><span class="ts">25:52</span>this is wow when we talk about durga you have durga here and you have the sri durga what the hell is the energy wow if you do your own meditate i guarantee you that it&#x27;s just a minute you just go away</p><p><span class="ts">26:22</span>but for some time because you are crazy mind you&#x27;re still questioning that&#x27;s true should i do it should i should i should i and you delay a lot of your idea that&#x27;s true i might fade up questioning now i want to find a way because they&#x27;re questioning a lot so what you need to do once again like i said that is not your karma anymore if you create it what you created just created this is not about good or bad just create it start even when you do a small thing that is for universe that your destiny is to create it my destiny is to be creator whatever is i&#x27;m creating it doesn&#x27;t matter okay okay you are smart so smart if you mention about that you easy to there is a problem blah blah blah blah blah and even they&#x27;re talking three hours it just one minute you know how to solve the problem</p><p><span class="ts">27:36</span>because of sh*t be careful i always mention about this to people with the power of mind whatever you have in your mind okay the idea this means you already create and then universe listening</p><p><span class="ts">28:04</span>and it must be universe will answer you and then why i say be careful two two two days ago i have a meeting and i asked one what about you lana this is so crazy i realize it okay what i have in my mind a years ago right now come all of them i&#x27;m confused it just come come come come come come what should i do mangu that&#x27;s what i mentioned about someone like you guys who have the power of mind be careful to have your own idea to send it to meaning in yourself because of it will come come come and you didn&#x27;t know they didn&#x27;t know when they come controlling the mind you mean controlling the thoughts yes because of like this as a human oh i really want something okay and then when you&#x27;re just thinking about this you really want to another thing behind of that</p><p><span class="ts">29:17</span>and then and then become become become become become become become that is from one idea the roads yeah yeah and then what about another idea it will be will be will be and then most of the time you delay it by yourself and universe will do like this what do you want it&#x27;s waiting for you to answer what do you want because you want a lot and then you delay a lot maybe not maybe yes maybe not maybe yes and then the universe still hold it yeah when you didn&#x27;t realize it that you will say okay for some time because your emotion it&#x27;s okay whatever and then all of come boom and then you crying oh my god it&#x27;s not like this what i want that is five years ago i want this man why is he come here where he come here right</p><p><span class="ts">30:13</span>now already married okay let&#x27;s be careful with your mind because your mind always connecting with universe the god himself it is not that is not bad but you need just to make your own true expectation how more than three how i can focus it by meditation by yoga meditation balance and focus it the ideas this is my question to you because of this if you are use this energy the water it really easy to do meditate if you focus here you easy to do meditate with the deep love but if you are here no you cannot do meditate</p><p><span class="ts">31:17</span>but you can feel it if you are really here what the meaning of it you need to do meditate while exercise like yoga hiking hiking swimming whatever that&#x27;s the way you do meditate how to do meditate at a time it&#x27;s not about your mind because your mind already work all the time even you didn&#x27;t care about your mind you even go to the gym and make it&#x27;s also meditation yeah as long as you just feel yourself like you&#x27;re swimming you didn&#x27;t thinking about what you do you just feel yourself your breathing and then enjoy</p><p><span class="ts">32:03</span>and then you didn&#x27;t realize that the mind himself make you more strong and you will never ever feel tired even my gym trainer i start i did it i go three or four times before my flight she told me after the third time she told me wow i was thinking that you cannot handle this how you did it i don&#x27;t know how i did it i have one woman and i tell already 55 years 55 years old already old woman crazy i&#x27;m going crazy blah blah blah you need to do running or swimming and then she call me every day one day she called me i did i did it and she come here do your own meditate with running or hiking or swimming and then she did it all one day she called me mangu i did 10 kilometers swimming yeah next day 15 kilometers are you tired no mangu</p><p><span class="ts">33:22</span>right now right now she always hiking to mount ago every week wow every week and then what what she got he changed himself the skin changed more younger more younger more happy oh my god this is the huge energy of crazy mind and truly to say uh</p><p><span class="ts">33:48</span>the many people on my age they look like old yes and no one is believed that me that i&#x27;m 37 they&#x27;re saying how you like you look like like 28 29 but you don&#x27;t like 37 i say i don&#x27;t know this is only maybe i have some white to go here maybe this is only sometimes can show</p><p><span class="ts">34:10</span>that is from here that is from here crazy and then they&#x27;re missing thing once again here when you are here your fist change so beautiful there is no human as beautiful as you this is here</p><p><span class="ts">34:30</span>and then you are so shiny and then you are so bright because you are smart it&#x27;s here three colors yes shine bright and beautiful shine bright and beautiful it&#x27;s actually fashion which i did before fashion business which i did before when we talk about business equation art itself sridurga in this point is the owner of art owner of art fashion also art yes and i start i don&#x27;t know why collecting the art my mother she is a collector of art and i never collected before but it&#x27;s one person is give me gift the art then one i buy then again i buy then again i buy then one another order then i said okay slowly slowly collections coming okay and i like art yes i like art really means i can make a different businesses you can like i say there is and it&#x27;s not crossing i have just to</p><p><span class="ts">35:58</span>create it created yeah there is a lot of opportunity that you can do it it&#x27;s a lot it&#x27;s just open wide whatever you want it&#x27;s just come but the main one should be this yes you are the transforming mind then i can have a not crossing with these businesses which can be some fashion business i can create the music i can create something you are my idea you are what you need to do this is because all of the energy come to the center</p><p><span class="ts">36:47</span>love yourself take care of yourself trust yourself you know i would like to pray i would like to pray one time you become like a man another time you want to be a woman another time you would like you want fight like a man it is you are one it is masculine and feminine it is the strangers another duality that really really make people crazy</p><p><span class="ts">37:36</span>the truth in yourself is there is too short what i hear it is man and woman inside of me i remember i was in the school it was the last classes and that time my father buy a nokia phone which was without you know tapping tapping and i was looking to the phone and thinking why no one still created the phone which is like i there is no buttons i can just like this after two years that is you you have the intelligence i i cannot explain that is something miracle in your mind</p><p><span class="ts">38:28</span>because you are smart i totally understand what you are telling me and okay the other one thing that i remember this person this energy is it cannot easy to find any relationship</p><p><span class="ts">38:59</span>not easy because you didn&#x27;t want a man more stupid than you more slow than you no you will kick them out because it&#x27;s boring yes it&#x27;s boring for me and i have a master i have a question what should i do with a man because sometimes you know like i have around me many i know and some of my friends they are bioner nine zeros but even with some of them i get boring</p><p><span class="ts">39:46</span>this side of the god to show me when i was in my previous relationship i said i i i give a chance to the guy i say okay he&#x27;s still living with his parents he&#x27;s still not 100 percent realize himself but i have experience to push a man to reach success succeed yes you are let me try let me try this relationship let me like believe on this guy support him i know that i can push him as much as he going to succeed uh-huh then i talk with a one woman she&#x27;s into the energy practice so on and she told me luisa tell the true yourself the true is that you don&#x27;t take responsibility when you choose this guy and as you didn&#x27;t take this responsibility to choose for your choice for the guy in the end he left</p><p><span class="ts">40:55</span>because he don&#x27;t take the responsibility to choose you in the end he just disappeared he just left then after that i understand and it was a period when i was a pregnant and i lost a baby it&#x27;s gone it was hard period because it&#x27;s last four months of my life was very hard because it&#x27;s take me deeply to the ground and i feel myself like a ball we have to from ground take up</p><p><span class="ts">41:34</span>yeah and uh then i understand the lessons that for me is not allowed to be with a man who is by mind by energy by finance by realization by the spirit he&#x27;s not my level even two three levels up because when i trying to get a chance to someone who is not in my level i&#x27;m like lying myself in the same time same time when i&#x27;m lying to myself in the same time first i&#x27;m cheating myself because i know this guy is not my level what why i&#x27;m doing it why i&#x27;m stupid why i&#x27;m stupid i&#x27;m not stupid but sometimes yes i&#x27;m acting stupid it&#x27;s reality yes it&#x27;s reality that is when we mention about this the shri durga you are shiwa you are duga and you are shiwaguru and you are rudra and you are the owner of tantra</p><p><span class="ts">42:59</span>so your capacity to be happy to have a relationship is not in the material life to be happy not in the material life i mean happy is the light himself not happy like a human you see the difference that you will have sex for example like not here but up there when we talk about shiwa and durga it&#x27;s about the connecting feminine and masculine you have to be married in different level if you say that yourself is not belong here that you will be married is not here yes that&#x27;s true because you the owner of tantra so here is the way just to play game</p><p><span class="ts">44:09</span>and you know and i know that you like to play game of life that is i&#x27;m a good gamer yes you are but i&#x27;m for them so if you come to the tantra side you&#x27;re going to feel there is a sexual energy from your body and come to the light that is you are amazing one when you combine the tantra energy to bring it here oh my god i don&#x27;t know what gonna be how to combine it to learn tantra first i need a good master for that now in dubai i don&#x27;t know if i can find a good master there was a one man but honestly i feel that he want to me i say bye bye i go out he was saying that he&#x27;s a tantra master who&#x27;s teaching another but i feel that you want to fuck me i don&#x27;t want to be most of them they try to abuse just to do sex</p><p><span class="ts">45:33</span>but you will find it maybe i will find it in bali so it means i will come out more often to bali obviously to say to tell you i came to the bali first time many people telling me that i know how to smell the money and i feel before i was hearing from to be in dubai that people saying that oh you know like it&#x27;s good to invest in bali i said come on why bali because like in dubai is like a good investment right now it&#x27;s like it&#x27;s like a lot of the the price for the property is going up already in dubai because because of covet actually a lot of people move to ui from all the all the countries around</p><p><span class="ts">46:28</span>and when i came to bali i feel like here price of property will gonna increase yes i feel it i feel now i i start to think about well i need to make money to buy one villa here because the price here gonna be increased so increase so high i feel already like maximum two three years the price in valley gonna be boom so crazy i feel it already and i i even didn&#x27;t go out of ubud i was like in ubud mostly because i came for a mind training i came and i feel that something gonna be crazy here yes yes master what to do with this all what to do start to learn tantra and understand the connections between these it&#x27;s the important is you come inside inside of infinity yes you&#x27;ve gone to yourself to love</p><p><span class="ts">47:41</span>yourself more just go in not out for yoga and meditation yes you can do by yoga meditation what you will recommend to find is to go inside like deeply what will be good for me</p><p><span class="ts">48:11</span>okay i&#x27;m ready for everything that&#x27;s how you open i have my own meditation if you insist yourself to learn i have my own meditate like you see on the zoom meeting</p><p><span class="ts">48:37</span>there&#x27;s i have ganapati meditate okay this is about all most people they will learn tantric okay some people will learn energy some people but in ganapati meditate is all about ganapati vegetation is included tantra included yeah but you mean technology right okay okay and how is possible kundalini and a church home that is my own meditating i create by myself i found it with danish that why i call this ganapati meditate you know ganesha was in my phone almost one year i put his photo on the screen of my phone it was what many people come you are not in the way you put you put connection i said i don&#x27;t know i feel the money is coming i didn&#x27;t feel the protection is coming i put ganesha why not i say i because i like it i really and i&#x27;m surprised you have ganesha yeah wow</p><p><span class="ts">49:44</span>i can teach you about ganapati meditate there is defined by six level i would love to i would love to know it you can do that wow prepare the water okay that&#x27;s all thank you so much i want to show you something before</p></div></details>
+  <p class="note">Запись начинается с середины разговора: практик уже смотрит на схему энергии («this is air, this is fire, solid, water») и указывает на неё жестами, поэтому часть смысла привязана к невидимому рисунку. Реплики собеседников не разделены; говорят практик и Луиза, имена восстановлены по контексту (Луиза называет его «mangu», вероятно балийский титул Mangku; практик упоминает участницу Lana). Речь с сильным акцентом, распознавание местами плохое. Неясные места: что именно означает «born faster than you should be… delay one day… take three days energy» (видимо, рождение раньше срока, но механика неясна); «you have the tree to the Sri Durga» (0:20:15) — непонятно, «tree» или «three»; «this is involved in Bali that we call Shiva Guru» — слово «involved» неясно; «one married one lifetime… you married more than three times» привязано к жестам на схеме; «kundalini and a church home» (0:48:37) — не распознано; «I found it with Danish» (о медитации Ганапати) — возможно «with Ganesha», неясно; «bioner nine zeros» — вероятно «billionaire»; «mount ago» — вероятно гора Агунг; «covet», «ui», «valley» — вероятно covid, UAE, Bali. Сама медитация Ганапати в записи не проводится: практик лишь предлагает обучить ей, говорит о шести уровнях и просит подготовить воду; запись обрывается на словах Луизы «I want to show you something before».</p>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div>Источник: Jalan Raya Denpasar-Gilimanuk No. 82.m4a</div>
+  <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><a href="course-7.html">← Предыдущий курс</a><a href="course-9.html">Следующий курс →</a></div>
+</div></footer>
+<script>/* 3D hero scenes. Each scene: function(THREE, scene, palette) -> { update(t), camera? } */
+(function () {
+  var SCENES = {};
+  function col(hex) { return new THREE.Color(hex); }
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+
+  /* 1. Garnet bracelet: faceted gems on a gold torus */
+  SCENES.garnet = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var ring = new THREE.Mesh(new THREE.TorusGeometry(2.6, 0.045, 12, 160),
+      new THREE.MeshStandardMaterial({ color: col(p.accent2), metalness: 0.9, roughness: 0.25 }));
+    group.add(ring);
+    var gemGeo = new THREE.DodecahedronGeometry(0.34, 0);
+    var gems = [];
+    for (var i = 0; i < 14; i++) {
+      var a = (i / 14) * Math.PI * 2;
+      var m = new THREE.Mesh(gemGeo, new THREE.MeshStandardMaterial({
+        color: col(p.accent), metalness: 0.2, roughness: 0.15, flatShading: true,
+        emissive: col(p.accent), emissiveIntensity: 0.25 }));
+      m.position.set(Math.cos(a) * 2.6, Math.sin(a) * 2.6, 0);
+      m.rotation.set(rnd(0, 6), rnd(0, 6), 0);
+      m.scale.setScalar(i % 2 ? 1 : 0.7);
+      gems.push(m); group.add(m);
+    }
+    var big = new THREE.Mesh(new THREE.DodecahedronGeometry(0.95, 0), new THREE.MeshStandardMaterial({
+      color: col(p.accent), metalness: 0.3, roughness: 0.12, flatShading: true, emissive: col(p.accent), emissiveIntensity: 0.3 }));
+    group.add(big);
+    group.rotation.x = 1.05;
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+    var l1 = new THREE.PointLight(col(p.accent2), 1.6, 30); l1.position.set(4, 5, 6); scene.add(l1);
+    var l2 = new THREE.PointLight(0xffffff, 0.8, 30); l2.position.set(-5, -3, 4); scene.add(l2);
+    return { update: function (t) {
+      group.rotation.z = t * 0.12; big.rotation.y = t * 0.4; big.rotation.x = t * 0.2;
+      gems.forEach(function (g, i) { g.rotation.y += 0.004 + i * 0.0003; });
+    }, camZ: 7.2 };
+  };
+
+  /* 2. Three yarn balls made of tangled threads */
+  SCENES.yarn = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var colors = [p.accent, p.accent2, p.fg];
+    var balls = [];
+    for (var b = 0; b < 3; b++) {
+      var pts = [];
+      var r = 1.05;
+      var v = new THREE.Vector3(rnd(-1, 1), rnd(-1, 1), rnd(-1, 1)).normalize().multiplyScalar(r);
+      for (var i = 0; i < 900; i++) {
+        var step = new THREE.Vector3(rnd(-1, 1), rnd(-1, 1), rnd(-1, 1)).multiplyScalar(0.28);
+        v.add(step);
+        if (v.length() > r) v.setLength(r * rnd(0.86, 1));
+        pts.push(v.clone());
+      }
+      var curve = new THREE.CatmullRomCurve3(pts);
+      var geo = new THREE.TubeGeometry(curve, 1400, 0.022, 5, false);
+      var mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: col(colors[b]), roughness: 0.7, metalness: 0.05 }));
+      var x = (b - 1) * 2.7;
+      mesh.position.set(x, b === 1 ? 0.35 : -0.25, 0);
+      balls.push(mesh); group.add(mesh);
+    }
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    var l1 = new THREE.PointLight(col(p.accent2), 1.4, 30); l1.position.set(3, 4, 5); scene.add(l1);
+    var l2 = new THREE.PointLight(col(p.accent), 1.0, 30); l2.position.set(-4, -2, 4); scene.add(l2);
+    return { update: function (t) {
+      balls.forEach(function (m, i) { m.rotation.y = t * (0.25 + i * 0.07); m.rotation.x = Math.sin(t * 0.3 + i) * 0.3; });
+    }, camZ: 6.8 };
+  };
+
+  /* 3. Eclipse: sun with a dark body crossing, plus node orbits */
+  SCENES.eclipse = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var sun = new THREE.Mesh(new THREE.SphereGeometry(1.5, 48, 48), new THREE.MeshBasicMaterial({ color: col(p.accent) }));
+    group.add(sun);
+    var halo = new THREE.Mesh(new THREE.SphereGeometry(1.75, 48, 48), new THREE.MeshBasicMaterial({ color: col(p.accent2), transparent: true, opacity: 0.22, side: THREE.BackSide }));
+    group.add(halo);
+    var moon = new THREE.Mesh(new THREE.SphereGeometry(1.42, 48, 48), new THREE.MeshStandardMaterial({ color: col(p.bg), roughness: 1 }));
+    moon.position.z = 0.6; group.add(moon);
+    var rings = [];
+    for (var i = 0; i < 3; i++) {
+      var r = new THREE.Mesh(new THREE.TorusGeometry(2.4 + i * 0.55, 0.012, 6, 200), new THREE.MeshBasicMaterial({ color: col(p.accent2), transparent: true, opacity: 0.55 - i * 0.12 }));
+      r.rotation.x = 1.2 + i * 0.18; r.rotation.y = i * 0.5; rings.push(r); group.add(r);
+    }
+    var nodeGeo = new THREE.SphereGeometry(0.09, 16, 16);
+    var n1 = new THREE.Mesh(nodeGeo, new THREE.MeshBasicMaterial({ color: col(p.fg) }));
+    var n2 = new THREE.Mesh(nodeGeo, new THREE.MeshBasicMaterial({ color: col(p.accent2) }));
+    group.add(n1); group.add(n2);
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+    var l = new THREE.PointLight(col(p.accent), 1.2, 20); l.position.set(0, 0, 4); scene.add(l);
+    return { update: function (t) {
+      moon.position.x = Math.sin(t * 0.18) * 2.3;
+      moon.position.y = Math.cos(t * 0.18) * 0.4;
+      rings.forEach(function (r, i) { r.rotation.z = t * (0.1 + i * 0.05); });
+      var a = t * 0.35;
+      n1.position.set(Math.cos(a) * 2.95, Math.sin(a) * 2.95 * Math.cos(1.38), Math.sin(a) * 2.95 * Math.sin(1.38));
+      n2.position.copy(n1.position).multiplyScalar(-1);
+      halo.scale.setScalar(1 + Math.sin(t * 1.5) * 0.02);
+    }, camZ: 7.2 };
+  };
+
+  /* 4. Currents: an undulating sea surface */
+  SCENES.waves = function (THREE, scene, p) {
+    var geo = new THREE.PlaneGeometry(16, 10, 120, 70);
+    var mat = new THREE.MeshStandardMaterial({ color: col(p.accent), roughness: 0.55, metalness: 0.1, wireframe: false, flatShading: true });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.rotation.x = -1.05; mesh.position.y = -1.2;
+    scene.add(mesh);
+    var wire = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: col(p.accent2), wireframe: true, transparent: true, opacity: 0.18 }));
+    wire.rotation.copy(mesh.rotation); wire.position.copy(mesh.position); wire.position.y += 0.01; scene.add(wire);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    var l = new THREE.DirectionalLight(0xffffff, 0.9); l.position.set(-3, 6, 4); scene.add(l);
+    var l2 = new THREE.PointLight(col(p.accent2), 0.9, 30); l2.position.set(5, 2, 3); scene.add(l2);
+    var pos = geo.attributes.position; var base = pos.array.slice();
+    return { update: function (t) {
+      for (var i = 0; i < pos.count; i++) {
+        var x = base[i * 3], y = base[i * 3 + 1];
+        pos.array[i * 3 + 2] = Math.sin(x * 0.7 + t * 0.9) * 0.35 + Math.cos(y * 0.9 - t * 0.6 + x * 0.3) * 0.25 + Math.sin((x + y) * 0.35 + t * 0.4) * 0.2;
+      }
+      pos.needsUpdate = true; geo.computeVertexNormals();
+    }, camZ: 7, camY: 1.2 };
+  };
+
+  /* 5. Axis of personality: vertical axis with seven rings */
+  SCENES.axis = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var axis = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 7.2, 12), new THREE.MeshStandardMaterial({ color: col(p.accent2), metalness: 0.8, roughness: 0.3, emissive: col(p.accent2), emissiveIntensity: 0.3 }));
+    group.add(axis);
+    var chakra = ["#c8313e", "#e8732c", "#f2c230", "#4caf6e", "#3b9bd6", "#5a5fd6", "#9b6bd1"];
+    var rings = [];
+    for (var i = 0; i < 7; i++) {
+      var r = new THREE.Mesh(new THREE.TorusGeometry(0.75 + i * 0.09, 0.05, 16, 100), new THREE.MeshStandardMaterial({ color: col(chakra[i]), roughness: 0.35, metalness: 0.3, emissive: col(chakra[i]), emissiveIntensity: 0.35 }));
+      r.rotation.x = Math.PI / 2; r.position.y = -3 + i; rings.push(r); group.add(r);
+    }
+    var top = new THREE.Mesh(new THREE.OctahedronGeometry(0.35, 0), new THREE.MeshStandardMaterial({ color: col(p.fg), emissive: col(p.accent2), emissiveIntensity: 0.6, flatShading: true }));
+    top.position.y = 3.85; group.add(top);
+    group.rotation.z = 0.08; group.rotation.x = 0.25;
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+    var l = new THREE.PointLight(0xffffff, 1.2, 40); l.position.set(4, 6, 6); scene.add(l);
+    return { update: function (t) {
+      group.rotation.y = t * 0.25;
+      rings.forEach(function (r, i) { var s = 1 + Math.sin(t * 1.6 - i * 0.6) * 0.06; r.scale.set(s, s, 1); });
+      top.rotation.y = t * 0.8;
+    }, camZ: 8.2 };
+  };
+
+  /* 6. Role cards: floating reflective planes */
+  SCENES.cards = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var cards = [];
+    var geo = new THREE.PlaneGeometry(1.3, 1.9);
+    var palette = [p.accent, p.accent2, p.fg, p.accent, p.accent2, p.accent];
+    for (var i = 0; i < 9; i++) {
+      var m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: col(palette[i % palette.length]), metalness: 0.35, roughness: 0.3, side: THREE.DoubleSide }));
+      var a = (i / 9) * Math.PI * 2;
+      m.userData = { a: a, r: 2.6 + (i % 3) * 0.25, y: (i % 3 - 1) * 0.7 };
+      cards.push(m); group.add(m);
+    }
+    group.rotation.x = 0.35;
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+    var l = new THREE.DirectionalLight(0xffffff, 0.9); l.position.set(3, 5, 5); scene.add(l);
+    var l2 = new THREE.PointLight(col(p.accent), 0.8, 30); l2.position.set(-4, 2, 3); scene.add(l2);
+    return { update: function (t) {
+      cards.forEach(function (c, i) {
+        var a = c.userData.a + t * 0.22;
+        c.position.set(Math.cos(a) * c.userData.r, c.userData.y + Math.sin(t * 0.9 + i) * 0.15, Math.sin(a) * c.userData.r);
+        c.rotation.y = -a + Math.PI / 2; c.rotation.z = Math.sin(t * 0.5 + i) * 0.08;
+      });
+    }, camZ: 7 };
+  };
+
+  /* 7. Facets: one large faceted gem */
+  SCENES.gem = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var gem = new THREE.Mesh(new THREE.IcosahedronGeometry(2.1, 1), new THREE.MeshStandardMaterial({ color: col(p.accent), metalness: 0.25, roughness: 0.18, flatShading: true }));
+    group.add(gem);
+    var edges = new THREE.LineSegments(new THREE.EdgesGeometry(gem.geometry), new THREE.LineBasicMaterial({ color: col(p.accent2), transparent: true, opacity: 0.35 }));
+    group.add(edges);
+    var halo = new THREE.Mesh(new THREE.IcosahedronGeometry(3.1, 1), new THREE.MeshBasicMaterial({ color: col(p.accent2), wireframe: true, transparent: true, opacity: 0.08 }));
+    group.add(halo);
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+    var l = new THREE.DirectionalLight(0xffffff, 1.1); l.position.set(4, 6, 5); scene.add(l);
+    var l2 = new THREE.PointLight(col(p.accent), 0.7, 30); l2.position.set(-5, -2, 4); scene.add(l2);
+    return { update: function (t) { gem.rotation.y = t * 0.3; gem.rotation.x = Math.sin(t * 0.25) * 0.4; edges.rotation.copy(gem.rotation); halo.rotation.y = -t * 0.12; halo.rotation.x = t * 0.08; }, camZ: 7 };
+  };
+
+  /* 8. Four elements orbiting a light */
+  SCENES.elements = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var core = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), new THREE.MeshBasicMaterial({ color: col(p.fg) }));
+    group.add(core);
+    var glow = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), new THREE.MeshBasicMaterial({ color: col(p.accent), transparent: true, opacity: 0.25, side: THREE.BackSide }));
+    group.add(glow);
+    var defs = [
+      { c: "#e9eef5", wire: true, r: 0.55 },   // air
+      { c: p.accent, wire: false, r: 0.6 },     // fire
+      { c: p.accent2, wire: false, r: 0.6 },    // water
+      { c: "#8a5a3c", wire: false, r: 0.62 }    // solid
+    ];
+    var orbs = defs.map(function (d, i) {
+      var m = new THREE.Mesh(new THREE.SphereGeometry(d.r, 28, 28), d.wire
+        ? new THREE.MeshBasicMaterial({ color: col(d.c), wireframe: true, transparent: true, opacity: 0.6 })
+        : new THREE.MeshStandardMaterial({ color: col(d.c), roughness: 0.5, metalness: 0.1, emissive: col(d.c), emissiveIntensity: 0.2 }));
+      m.userData = { a: i * Math.PI / 2, tilt: i * 0.5 };
+      group.add(m); return m;
+    });
+    var orbit = new THREE.Mesh(new THREE.TorusGeometry(2.7, 0.01, 6, 200), new THREE.MeshBasicMaterial({ color: col(p.accent), transparent: true, opacity: 0.35 }));
+    orbit.rotation.x = 1.2; group.add(orbit);
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    var l = new THREE.PointLight(0xffffff, 1.2, 30); l.position.set(0, 0, 0); scene.add(l);
+    var l2 = new THREE.DirectionalLight(0xffffff, 0.5); l2.position.set(3, 5, 4); scene.add(l2);
+    return { update: function (t) {
+      orbs.forEach(function (o, i) {
+        var a = o.userData.a + t * 0.4;
+        o.position.set(Math.cos(a) * 2.7, Math.sin(a) * 2.7 * Math.cos(1.2), Math.sin(a) * 2.7 * Math.sin(1.2));
+        o.rotation.y = t;
+      });
+      glow.scale.setScalar(1 + Math.sin(t * 2) * 0.08);
+      orbit.rotation.z = t * 0.1;
+    }, camZ: 7 };
+  };
+
+  /* 9. Breath: a sphere that breathes with soft particles */
+  SCENES.breath = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var core = new THREE.Mesh(new THREE.SphereGeometry(1.4, 48, 48), new THREE.MeshStandardMaterial({ color: col(p.accent), roughness: 0.6, metalness: 0.05, transparent: true, opacity: 0.85 }));
+    group.add(core);
+    var shell = new THREE.Mesh(new THREE.SphereGeometry(1.9, 48, 48), new THREE.MeshBasicMaterial({ color: col(p.accent2), transparent: true, opacity: 0.14, side: THREE.BackSide }));
+    group.add(shell);
+    var n = 500, pos = new Float32Array(n * 3);
+    for (var i = 0; i < n; i++) {
+      var v = new THREE.Vector3(rnd(-1, 1), rnd(-1, 1), rnd(-1, 1)).normalize().multiplyScalar(rnd(2.3, 4.2));
+      pos[i * 3] = v.x; pos[i * 3 + 1] = v.y; pos[i * 3 + 2] = v.z;
+    }
+    var pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    var pts = new THREE.Points(pg, new THREE.PointsMaterial({ color: col(p.accent2), size: 0.05, transparent: true, opacity: 0.8 }));
+    group.add(pts);
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    var l = new THREE.DirectionalLight(0xffffff, 0.8); l.position.set(3, 5, 5); scene.add(l);
+    return { update: function (t) {
+      var breath = 0.5 + 0.5 * Math.sin(t * (Math.PI / 4)); // 8-second cycle: 4 in, 4 out
+      var s = 0.85 + breath * 0.3; core.scale.setScalar(s); shell.scale.setScalar(0.9 + breath * 0.35);
+      pts.rotation.y = t * 0.05; pts.rotation.x = t * 0.02;
+      pts.scale.setScalar(1 + breath * 0.08);
+    }, camZ: 7 };
+  };
+
+  /* Index: constellation of nine orbs */
+  SCENES.constellation = function (THREE, scene, p) {
+    var group = new THREE.Group();
+    var colors = p.orbColors || [p.accent, p.accent2, p.fg];
+    var orbs = [];
+    for (var i = 0; i < colors.length; i++) {
+      var m = new THREE.Mesh(new THREE.SphereGeometry(0.28 + (i % 3) * 0.08, 24, 24), new THREE.MeshStandardMaterial({ color: col(colors[i]), roughness: 0.4, metalness: 0.2, emissive: col(colors[i]), emissiveIntensity: 0.35 }));
+      m.userData = { a: (i / colors.length) * Math.PI * 2, r: 2.2 + (i % 2) * 0.9, y: Math.sin(i * 1.7) * 1.1, s: 0.15 + (i % 4) * 0.05 };
+      orbs.push(m); group.add(m);
+    }
+    var lines = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: col(p.fg), transparent: true, opacity: 0.18 }));
+    group.add(lines);
+    scene.add(group);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+    var l = new THREE.PointLight(0xffffff, 1.1, 40); l.position.set(3, 5, 6); scene.add(l);
+    var arr = new Float32Array(orbs.length * 3 * 2);
+    return { update: function (t) {
+      orbs.forEach(function (o, i) {
+        var a = o.userData.a + t * o.userData.s;
+        o.position.set(Math.cos(a) * o.userData.r, o.userData.y + Math.sin(t * 0.7 + i) * 0.25, Math.sin(a) * o.userData.r);
+      });
+      for (var i = 0; i < orbs.length; i++) {
+        var a = orbs[i].position, b = orbs[(i + 1) % orbs.length].position;
+        arr[i * 6] = a.x; arr[i * 6 + 1] = a.y; arr[i * 6 + 2] = a.z; arr[i * 6 + 3] = b.x; arr[i * 6 + 4] = b.y; arr[i * 6 + 5] = b.z;
+      }
+      lines.geometry.setAttribute("position", new THREE.BufferAttribute(arr, 3));
+      group.rotation.y = t * 0.03;
+    }, camZ: 7 };
+  };
+
+  window.mountScene = function (canvas, name, palette) {
+    if (!window.THREE || !SCENES[name]) { canvas.hidden = true; return; }
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "low-power" }); }
+    catch (e) { canvas.hidden = true; return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    var s = SCENES[name](THREE, scene, palette);
+    camera.position.set(0, s.camY || 0, s.camZ || 7);
+    camera.lookAt(0, 0, 0);
+    function resize() {
+      var w = canvas.clientWidth || 1, h = canvas.clientHeight || 1;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      if (w < 640) camera.position.z = (s.camZ || 7) * 1.35;
+      camera.updateProjectionMatrix();
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    var start = performance.now(), running = true;
+    function frame() {
+      if (!running) return;
+      var t = (performance.now() - start) / 1000;
+      s.update(t);
+      renderer.render(scene, camera);
+      if (!reduced) requestAnimationFrame(frame);
+    }
+    s.update(3.2); renderer.render(scene, camera);
+    if (!reduced) requestAnimationFrame(frame);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { running = false; } else if (!running && !reduced) { running = true; requestAnimationFrame(frame); }
+    });
+  };
+})();
+</script>
+<script>mountScene(document.getElementById("scene"), "elements", {"bg": "#0a1f18", "bg2": "#113026", "fg": "#f4efe3", "accent": "#f2a516", "accent2": "#3aa7c9"});</script>
+</body></html>
